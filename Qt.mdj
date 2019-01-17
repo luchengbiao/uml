@@ -3565,8 +3565,8 @@
 								"$ref": "AAAAAAFF+qBtyKM79qY="
 							},
 							"font": "Arial;13;0",
-							"left": 1160,
-							"top": 728,
+							"left": 1136,
+							"top": 664,
 							"width": 137,
 							"height": 81,
 							"text": "signalIndex : slots\nin QObjectPrivate \nin qobject_p.h"
@@ -3585,7 +3585,7 @@
 								"$ref": "AAAAAAFjNSoXfwwzA1E="
 							},
 							"lineStyle": 1,
-							"points": "1159:758;1093:749"
+							"points": "1135:713;1093:719"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -5468,7 +5468,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 96,
-							"top": 1304,
+							"top": 1288,
 							"width": 590.59716796875,
 							"height": 282,
 							"text": "in qobject_impl.h\ntypedef void (*ImplFn)(int which, QSlotObjectBase* this_, QObject *receiver, void **args, bool *ret)\nconst ImplFn m_impl\n通过函数指针ImplFn模拟了虚函数机制\nQSlotObject、QStaticSlotObject、QFunctorSlotObject皆有一个类静态成员函数\nstatic void impl(int which, QSlotObjectBase *this_, QObject *r, void **a, bool *ret)\n并在构造时将其指针赋予基类QSlotObjectBase的m_impl\nQSlotObject：负责封装槽是某个类对象的成员函数指针\nQStaticSlotObject：负责封装槽是非成员函数（比如全局函数、静态函数、类静态成员函数等）\nQFunctorSlotObject：负责封装槽是仿函数对象（重载了operator（）类的对象）或lambda\nwhich param is enum：\nenum Operation \n{\nDestroy,\nCall,\nCompare,\n\nNumOperations\n};"
@@ -5487,7 +5487,7 @@
 								"$ref": "AAAAAAFjNTQYmCgPoHo="
 							},
 							"lineStyle": 1,
-							"points": "967:1480;687:1462"
+							"points": "967:1478;687:1454"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -7990,6 +7990,435 @@
 							},
 							"lineStyle": 1,
 							"points": "1120:1135;1207:1146"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWaXTmeKMrRM=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 1368,
+							"top": 1528,
+							"width": 841,
+							"height": 141,
+							"text": "    enum ConnectionType {\n        AutoConnection, // 默认的自动连接：如果ThreadOfSlotObj与CurrentThread相同则直接调用槽函数，否则通过QMetaCallEvent到ThreadOfSlotObj异步调用\n        DirectConnection, // 不论ThreadOfSlotObj与CurrentThread是否相同，直接调用槽函数\n        QueuedConnection, // 不论ThreadOfSlotObj与CurrentThread是否相同，通过QMetaCallEvent到ThreadOfSlotObj异步调用\n        BlockingQueuedConnection,// ThreadOfSlotObj与CurrentThread不同是，通过携带了QSemaphore的QMetaCallEvent到ThreadOfSlotObj阻塞同步调用\n        UniqueConnection =  0x80\n    };"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWaYcduaUd9M=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWaXTmeKMrRM="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoEth/5Gy4S/Y="
+							},
+							"lineStyle": 1,
+							"points": "1711:1457;1749:1527"
+						},
+						{
+							"_type": "UMLClassView",
+							"_id": "AAAAAAFoWbfdp/k618I=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"model": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFoWbfdp/k78Rk=",
+									"_parent": {
+										"$ref": "AAAAAAFoWbfdp/k618I="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWbfdpvk4YvA="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWbfdp/k8sTM=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/k78Rk="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"top": 272,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWbfdp/k9LX8=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/k78Rk="
+											},
+											"font": "Arial;13;1",
+											"left": 1621,
+											"top": 1719,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "QMetaCallEvent"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWbfdp/k+whE=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/k78Rk="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"top": 272,
+											"width": 94.63720703125,
+											"height": 13,
+											"text": "(from signalSlot)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWbfdp/k/7as=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/k78Rk="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"top": 272,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 1616,
+									"top": 1712,
+									"width": 231.4697265625,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFoWbfdp/k8sTM="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFoWbfdp/k9LX8="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFoWbfdp/k+whE="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFoWbfdp/k/7as="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAFoWbfdp/lAL24=",
+									"_parent": {
+										"$ref": "AAAAAAFoWbfdp/k618I="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWbfdpvk4YvA="
+									},
+									"subViews": [
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWbkthwsSE70=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWbktMAruBlw="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1742,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+QSlotObjectBase *slotObj_",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWblknA1sQlo=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWblkUA1I6e8="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1757,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+QObject *sender_",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWbmVjA9iHbs=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWbmVQA8+PL4="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1772,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+int signalId_",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWborGxFYoBs=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWboqzxE0r8U="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1787,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+int *types_",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWbpWKxNO3do=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWbpV3hMq12A="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1802,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+void **args_",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWbyN1hYKyoU=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWbyNiBXmuhM="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1817,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+QSemaphore *semaphore_",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWbzUUxhjN+0=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWbzUCBg/HPw="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1832,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+StaticMetaCallFunction callFunction_",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWb0AsRpZKa4=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWb0AZxo1x6c="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1847,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+ushort method_offset_",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFoWb0rYhxPAK4=",
+											"_parent": {
+												"$ref": "AAAAAAFoWbfdp/lAL24="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWb0rFhwrXqQ="
+											},
+											"font": "Arial;13;0",
+											"left": 1621,
+											"top": 1862,
+											"width": 221.4697265625,
+											"height": 13,
+											"text": "+ushort method_relative_",
+											"horizontalAlignment": 0
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 1616,
+									"top": 1737,
+									"width": 231.4697265625,
+									"height": 143
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAFoWbfdp/lB60U=",
+									"_parent": {
+										"$ref": "AAAAAAFoWbfdp/k618I="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWbfdpvk4YvA="
+									},
+									"font": "Arial;13;0",
+									"left": 1616,
+									"top": 1880,
+									"width": 231.4697265625,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAFoWbfdp/lConA=",
+									"_parent": {
+										"$ref": "AAAAAAFoWbfdp/k618I="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWbfdpvk4YvA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"top": 136,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAFoWbfdp/lDFtE=",
+									"_parent": {
+										"$ref": "AAAAAAFoWbfdp/k618I="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWbfdpvk4YvA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"top": 136,
+									"width": 10,
+									"height": 10
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 1616,
+							"top": 1712,
+							"width": 231.4697265625,
+							"height": 178,
+							"nameCompartment": {
+								"$ref": "AAAAAAFoWbfdp/k78Rk="
+							},
+							"attributeCompartment": {
+								"$ref": "AAAAAAFoWbfdp/lAL24="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAFoWbfdp/lB60U="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAFoWbfdp/lConA="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAFoWbfdp/lDFtE="
+							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWb3ADiHgHPQ=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 1816,
+							"top": 1928,
+							"width": 545,
+							"height": 145,
+							"text": "QMetaCallEvent::~QMetaCallEvent()\n{\n 。。。\n    if (semaphore_)\n        semaphore_->release(); // BlockingQueuedConnection，不同线程的阻塞调用\n 。。。\n}"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWcAbxjVsoDg=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWb3ADiHgHPQ="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoWaXTmeKMrRM="
+							},
+							"lineStyle": 1,
+							"points": "1841:1669;2034:1927"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWcAmBjWxO28=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWbfdp/k618I="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoWb3ADiHgHPQ="
+							},
+							"lineStyle": 1,
+							"points": "1958:1927;1847:1865"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWcH7fz9gjcM=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 1296,
+							"top": 2120,
+							"width": 649,
+							"height": 381,
+							"text": "void QMetaObject::activate(QObject *sender, int signalOffset, int local_signal_index, void **argv)\n{\n。。。\n            } else if (c->connectionType == Qt::BlockingQueuedConnection) {\n                locker.unlock();\n                if (receiverInSameThread) {\n                    qWarning(\"Qt: Dead lock detected while activating a BlockingQueuedConnection: \"\n                    \"Sender is %s(%p), receiver is %s(%p)\",\n                    sender->metaObject()->className(), sender,\n                    receiver->metaObject()->className(), receiver);\n                }\n                QSemaphore semaphore; // 将被放入QMetaCallEvent中，并在QMetaCallEvent析构时release！！\n                QMetaCallEvent *ev = c->isSlotObject ?\n                    new QMetaCallEvent(c->slotObj, sender, signal_index, 0, 0, argv ? argv : empty_argv, &semaphore) :\n                    new QMetaCallEvent(c->method_offset, c->method_relative, c->callFunction, sender, signal_index, 0, 0, argv ? argv : empty_argv, &semaphore);\n                QCoreApplication::postEvent(receiver, ev);\n                semaphore.acquire(); // 阻塞等待调用返回!!!!!!!!!!!!!\n                locker.relock();\n                continue;\n#endif\n            }\n 。。。\n}"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWcQ/FFV+BNo=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWb3ADiHgHPQ="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoWcH7fz9gjcM="
+							},
+							"lineStyle": 1,
+							"points": "1908:2119;1978:2073"
 						}
 					]
 				},
@@ -8968,6 +9397,88 @@
 									"$ref": "AAAAAAFl0oeFh6gQ5dU="
 								}
 							}
+						}
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAFoWbfdpvk4YvA=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "QMetaCallEvent",
+					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWbktMAruBlw=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "QSlotObjectBase *slotObj_"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWblkUA1I6e8=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "QObject *sender_"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWbmVQA8+PL4=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "int signalId_"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWboqzxE0r8U=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "int *types_"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWbpV3hMq12A=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "void **args_"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWbyNiBXmuhM=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "QSemaphore *semaphore_"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWbzUCBg/HPw=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "StaticMetaCallFunction callFunction_"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWb0AZxo1x6c=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "ushort method_offset_"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFoWb0rFhwrXqQ=",
+							"_parent": {
+								"$ref": "AAAAAAFoWbfdpvk4YvA="
+							},
+							"name": "ushort method_relative_"
 						}
 					]
 				}
@@ -39083,7 +39594,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -976,
-											"top": 784,
+											"top": 768,
 											"height": 13
 										},
 										{
@@ -39094,7 +39605,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 229,
-											"top": 1039,
+											"top": 1031,
 											"width": 169.0380859375,
 											"height": 13,
 											"text": "qt_meta_stringdata_XXX_t"
@@ -39108,7 +39619,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -976,
-											"top": 784,
+											"top": 768,
 											"width": 104.74267578125,
 											"height": 13,
 											"text": "(from MetaObject)"
@@ -39122,14 +39633,14 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -976,
-											"top": 784,
+											"top": 768,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 224,
-									"top": 1032,
+									"top": 1024,
 									"width": 179.0380859375,
 									"height": 25,
 									"stereotypeLabel": {
@@ -39166,7 +39677,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 229,
-											"top": 1062,
+											"top": 1054,
 											"width": 169.0380859375,
 											"height": 13,
 											"text": "+data: QByteArrayData[?]",
@@ -39183,7 +39694,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 229,
-											"top": 1077,
+											"top": 1069,
 											"width": 169.0380859375,
 											"height": 13,
 											"text": "+stringData0: char[?]",
@@ -39192,7 +39703,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 224,
-									"top": 1057,
+									"top": 1049,
 									"width": 179.0380859375,
 									"height": 38
 								},
@@ -39207,7 +39718,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 224,
-									"top": 1095,
+									"top": 1087,
 									"width": 179.0380859375,
 									"height": 10
 								},
@@ -39223,7 +39734,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -488,
-									"top": 392,
+									"top": 384,
 									"width": 10,
 									"height": 10
 								},
@@ -39239,7 +39750,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -488,
-									"top": 392,
+									"top": 384,
 									"width": 10,
 									"height": 10
 								}
@@ -39247,7 +39758,7 @@
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 224,
-							"top": 1032,
+							"top": 1024,
 							"width": 179.0380859375,
 							"height": 73,
 							"nameCompartment": {
@@ -39516,7 +40027,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 280,
-									"top": 1153,
+									"top": 1149,
 									"width": 32.8935546875,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -39539,7 +40050,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 281,
-									"top": 1153,
+									"top": 1149,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -39560,7 +40071,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 325,
-									"top": 1154,
+									"top": 1150,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -39644,7 +40155,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 296,
-									"top": 1124,
+									"top": 1116,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -39664,7 +40175,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 283,
-									"top": 1127,
+									"top": 1119,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -39684,7 +40195,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 324,
-									"top": 1120,
+									"top": 1112,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -39733,7 +40244,7 @@
 								"$ref": "AAAAAAFoEnMveJ789+g="
 							},
 							"lineStyle": 1,
-							"points": "311:1215;312:1105",
+							"points": "311:1215;312:1097",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFoEnNZUZ+EmLA="
@@ -40802,7 +41313,7 @@
 								"$ref": "AAAAAAFoEnJbIZ2I0Bk="
 							},
 							"lineStyle": 1,
-							"points": "223:1104;164:1127"
+							"points": "228:1097;159:1127"
 						},
 						{
 							"_type": "UMLClassView",
@@ -41537,8 +42048,8 @@
 								"$ref": "AAAAAAFoElxkqJRG63Y="
 							},
 							"font": "Arial;13;0",
-							"left": 448,
-							"top": 1184,
+							"left": 656,
+							"top": 1144,
 							"width": 321,
 							"height": 25,
 							"text": "static const uint qt_meta_data_XXX[]"
@@ -41557,7 +42068,7 @@
 								"$ref": "AAAAAAFoEprXPdGtPo8="
 							},
 							"lineStyle": 1,
-							"points": "602:1183;556:1085"
+							"points": "779:1143;611:1085"
 						},
 						{
 							"_type": "UMLDependencyView",
@@ -41579,8 +42090,8 @@
 										"$ref": "AAAAAAFoEptgJtP5tk0="
 									},
 									"font": "Arial;13;0",
-									"left": 389,
-									"top": 983,
+									"left": 387,
+									"top": 979,
 									"width": 71.91259765625,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -41602,8 +42113,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 434,
-									"top": 994,
+									"left": 432,
+									"top": 990,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -41624,7 +42135,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 403,
-									"top": 960,
+									"top": 956,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -41642,7 +42153,7 @@
 								"$ref": "AAAAAAFoEo1GEb4UVjI="
 							},
 							"lineStyle": 1,
-							"points": "474:925;355:1031",
+							"points": "471:925;356:1023",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFoEptgJtP8kOg="
@@ -43122,6 +43633,51 @@
 							"width": 161,
 							"height": 40,
 							"text": "in qmetaobject.h/cpp"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWWnw/dtPfSA=",
+							"_parent": {
+								"$ref": "AAAAAAFoElxkqJRG63Y="
+							},
+							"font": "Arial;13;0",
+							"left": 464,
+							"top": 1272,
+							"width": 321.18994140625,
+							"height": 64,
+							"text": "两者结合将signal/slot, Property, Enum, ClassInfo解析为相应的字符串信息，此即元对象信息"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWWuCzd3d0Ao=",
+							"_parent": {
+								"$ref": "AAAAAAFoElxkqJRG63Y="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWWnw/dtPfSA="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoEnJbIZ2I0Bk="
+							},
+							"lineStyle": 1,
+							"points": "360:1097;583:1271"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWWuMvN4EFOg=",
+							"_parent": {
+								"$ref": "AAAAAAFoElxkqJRG63Y="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWWnw/dtPfSA="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoEppQ/tAurRs="
+							},
+							"lineStyle": 1,
+							"points": "553:1085;614:1271"
 						}
 					]
 				},
@@ -48608,7 +49164,8 @@
 								"$ref": "AAAAAAFoVXycZwoGdvI="
 							},
 							"name": "static QCoreApplication *self",
-							"isStatic": true
+							"isStatic": true,
+							"type": ""
 						}
 					]
 				},
@@ -52881,7 +53438,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFoVYE/8Qq6X/k="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -52889,7 +53447,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFoVYE/8Qq6X/k="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -52897,7 +53456,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFoVYE/8Qq6X/k="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -52905,7 +53465,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFoVYE/8Qq6X/k="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -52913,7 +53474,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFoVYE/8Qq6X/k="
 					},
-					"name": "Role6"
+					"name": "Role6",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -52921,7 +53483,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFoVYE/8Qq6X/k="
 					},
-					"name": "Role7"
+					"name": "Role7",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -52929,7 +53492,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFoVYE/8Qq6X/k="
 					},
-					"name": "Role8"
+					"name": "Role8",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -52937,7 +53501,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFoVYE/8Qq6X/k="
 					},
-					"name": "Role9"
+					"name": "Role9",
+					"type": ""
 				}
 			]
 		}
