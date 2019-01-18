@@ -5542,7 +5542,7 @@
 							"top": 1976,
 							"width": 410.05712890625,
 							"height": 40,
-							"text": "负责封装槽是仿函数对象（重载了operator（）类的对象）或lambda"
+							"text": "负责封装槽是仿函数对象（重载了operator（）类的对象）\n或lambda(本质是由编译自动生成的函数对象)"
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -9414,7 +9414,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "QSlotObjectBase *slotObj_"
+							"name": "QSlotObjectBase *slotObj_",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9422,7 +9423,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "QObject *sender_"
+							"name": "QObject *sender_",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9430,7 +9432,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "int signalId_"
+							"name": "int signalId_",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9438,7 +9441,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "int *types_"
+							"name": "int *types_",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9446,7 +9450,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "void **args_"
+							"name": "void **args_",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9454,7 +9459,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "QSemaphore *semaphore_"
+							"name": "QSemaphore *semaphore_",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9462,7 +9468,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "StaticMetaCallFunction callFunction_"
+							"name": "StaticMetaCallFunction callFunction_",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9470,7 +9477,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "ushort method_offset_"
+							"name": "ushort method_offset_",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9478,7 +9486,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFoWbfdpvk4YvA="
 							},
-							"name": "ushort method_relative_"
+							"name": "ushort method_relative_",
+							"type": ""
 						}
 					]
 				}
@@ -53503,6 +53512,915 @@
 					},
 					"name": "Role9",
 					"type": ""
+				}
+			]
+		},
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFoWdWoOroY+6U=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "TypeTraits",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFoWdWoOroZoxY=",
+					"_parent": {
+						"$ref": "AAAAAAFoWdWoOroY+6U="
+					},
+					"name": "TypeTraits",
+					"ownedViews": [
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWda8j7q1x4Y=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"left": 80,
+							"top": 208,
+							"width": 833,
+							"height": 38,
+							"text": "template<typename Func> struct FunctionPointer { enum {ArgumentCount = -1, IsPointerToMemberFunction = false}; };"
+						},
+						{
+							"_type": "UMLClassView",
+							"_id": "AAAAAAFoWdeLaLw01fM=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"model": {
+								"$ref": "AAAAAAFoWdeLZ7wyai8="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFoWdeLaLw1Hw0=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdeLaLw01fM="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdeLZ7wyai8="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdeLaLw2Y7g=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdeLaLw1Hw0="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -16,
+											"top": -80,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdeLaLw3Mt0=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdeLaLw1Hw0="
+											},
+											"font": "Arial;13;1",
+											"left": 253,
+											"top": 321,
+											"width": 140.6689453125,
+											"height": 13,
+											"text": "FunctionPointer"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdeLaLw4fFI=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdeLaLw1Hw0="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -16,
+											"top": -80,
+											"width": 98.47119140625,
+											"height": 13,
+											"text": "(from TypeTraits)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdeLaLw5SXo=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdeLaLw1Hw0="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -16,
+											"top": -80,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 248,
+									"top": 314,
+									"width": 150.6689453125,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFoWdeLaLw2Y7g="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFoWdeLaLw3Mt0="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFoWdeLaLw4fFI="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFoWdeLaLw5SXo="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAFoWdeLaLw6s+s=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdeLaLw01fM="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdeLZ7wyai8="
+									},
+									"font": "Arial;13;0",
+									"left": 248,
+									"top": 339,
+									"width": 150.6689453125,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAFoWdeLaLw7Tgc=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdeLaLw01fM="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdeLZ7wyai8="
+									},
+									"font": "Arial;13;0",
+									"left": 248,
+									"top": 349,
+									"width": 150.6689453125,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAFoWdeLaLw83VU=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdeLaLw01fM="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdeLZ7wyai8="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -8,
+									"top": -40,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAFoWdeLaLw9M5Y=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdeLaLw01fM="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdeLZ7wyai8="
+									},
+									"subViews": [
+										{
+											"_type": "UMLTemplateParameterView",
+											"_id": "AAAAAAFoWdefOLxggco=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdeLaLw9M5Y="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWdefCLxd8xU="
+											},
+											"font": "Arial;13;0",
+											"left": 373.76806640625,
+											"top": 301,
+											"width": 28.90087890625,
+											"height": 13,
+											"text": "Func",
+											"horizontalAlignment": 0
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 368.76806640625,
+									"top": 296,
+									"width": 38.90087890625,
+									"height": 23
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 248,
+							"top": 296,
+							"width": 160.6689453125,
+							"height": 63,
+							"nameCompartment": {
+								"$ref": "AAAAAAFoWdeLaLw1Hw0="
+							},
+							"attributeCompartment": {
+								"$ref": "AAAAAAFoWdeLaLw6s+s="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAFoWdeLaLw7Tgc="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAFoWdeLaLw83VU="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAFoWdeLaLw9M5Y="
+							}
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWdhB9rxrGZU=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWda8j7q1x4Y="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoWdeLaLw01fM="
+							},
+							"lineStyle": 1,
+							"points": "381:295;463:246"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWdia/rxuebw=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"left": 8,
+							"top": 520,
+							"width": 689,
+							"height": 190,
+							"text": "template<class Obj, typename Ret, typename... Args> struct FunctionPointer<Ret (Obj::*) (Args...)>\n    {\n        typedef Obj Object;\n        typedef List<Args...>  Arguments;\n        typedef Ret ReturnType;\n        typedef Ret (Obj::*Function) (Args...);\n        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = true};\n        template <typename SignalArgs, typename R>\n        static void call(Function f, Obj *o, void **arg) {\n            FunctorCall<typename Indexes<ArgumentCount>::Value, SignalArgs, R, Function>::call(f, o, arg);\n        }\n    };"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWdkd1rx7hs4=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"left": 736,
+							"top": 520,
+							"width": 713,
+							"height": 190,
+							"text": "    template<class Obj, typename Ret, typename... Args> struct FunctionPointer<Ret (Obj::*) (Args...) const>\n    {\n        typedef Obj Object;\n        typedef List<Args...>  Arguments;\n        typedef Ret ReturnType;\n        typedef Ret (Obj::*Function) (Args...) const;\n        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = true};\n        template <typename SignalArgs, typename R>\n        static void call(Function f, Obj *o, void **arg) {\n            FunctorCall<typename Indexes<ArgumentCount>::Value, SignalArgs, R, Function>::call(f, o, arg);\n        }\n    };"
+						},
+						{
+							"_type": "UMLClassView",
+							"_id": "AAAAAAFoWdl4/ryHblQ=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"model": {
+								"$ref": "AAAAAAFoWdl4/byF93g="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFoWdl4/ryI5Aw=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdl4/ryHblQ="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdl4/byF93g="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdl4/ryJahc=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdl4/ryI5Aw="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 592,
+											"top": -208,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdl4/ryKCMw=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdl4/ryI5Aw="
+											},
+											"font": "Arial;13;1",
+											"left": 581,
+											"top": 423,
+											"width": 140.6689453125,
+											"height": 13,
+											"text": "FunctionPointer"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdl4/7yLUsw=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdl4/ryI5Aw="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 592,
+											"top": -208,
+											"width": 98.47119140625,
+											"height": 13,
+											"text": "(from TypeTraits)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdl4/7yM9lM=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdl4/ryI5Aw="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 592,
+											"top": -208,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 576,
+									"top": 416,
+									"width": 150.6689453125,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFoWdl4/ryJahc="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFoWdl4/ryKCMw="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFoWdl4/7yLUsw="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFoWdl4/7yM9lM="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAFoWdl4/7yNTOA=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdl4/ryHblQ="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdl4/byF93g="
+									},
+									"font": "Arial;13;0",
+									"left": 576,
+									"top": 441,
+									"width": 150.6689453125,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAFoWdl4/7yObDg=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdl4/ryHblQ="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdl4/byF93g="
+									},
+									"font": "Arial;13;0",
+									"left": 576,
+									"top": 451,
+									"width": 150.6689453125,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAFoWdl4/7yPzmY=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdl4/ryHblQ="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdl4/byF93g="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 296,
+									"top": -104,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAFoWdl4/7yQQ1U=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdl4/ryHblQ="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdl4/byF93g="
+									},
+									"subViews": [
+										{
+											"_type": "UMLTemplateParameterView",
+											"_id": "AAAAAAFoWdnmBryz2EY=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdl4/7yQQ1U="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWdnlyLywcYM="
+											},
+											"font": "Arial;13;0",
+											"left": 693.103515625,
+											"top": 373,
+											"width": 37.5654296875,
+											"height": 13,
+											"text": "Obj",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLTemplateParameterView",
+											"_id": "AAAAAAFoWdo02by/yWQ=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdl4/7yQQ1U="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWdo0n7y8z80="
+											},
+											"font": "Arial;13;0",
+											"left": 693.103515625,
+											"top": 388,
+											"width": 37.5654296875,
+											"height": 13,
+											"text": "Ret",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLTemplateParameterView",
+											"_id": "AAAAAAFoWdqZI7zGnHk=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdl4/7yQQ1U="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWdqY5rzDhXw="
+											},
+											"font": "Arial;13;0",
+											"left": 693.103515625,
+											"top": 403,
+											"width": 37.5654296875,
+											"height": 13,
+											"text": "...Args",
+											"horizontalAlignment": 0
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 688.103515625,
+									"top": 368,
+									"width": 47.5654296875,
+									"height": 53
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 576,
+							"top": 368,
+							"width": 160.6689453125,
+							"height": 93,
+							"nameCompartment": {
+								"$ref": "AAAAAAFoWdl4/ryI5Aw="
+							},
+							"attributeCompartment": {
+								"$ref": "AAAAAAFoWdl4/7yNTOA="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAFoWdl4/7yObDg="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAFoWdl4/7yPzmY="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAFoWdl4/7yQQ1U="
+							}
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWdtQlbzNkXg=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWdia/rxuebw="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoWdl4/ryHblQ="
+							},
+							"lineStyle": 1,
+							"points": "584:461;496:519"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWdtaHbzQwGc=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWdkd1rx7hs4="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoWdl4/ryHblQ="
+							},
+							"lineStyle": 1,
+							"points": "737:451;884:519"
+						},
+						{
+							"_type": "UMLClassView",
+							"_id": "AAAAAAFoWdvG1bzagyc=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"model": {
+								"$ref": "AAAAAAFoWdvG1bzYo8M="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFoWdvG1bzb6Po=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdvG1bzagyc="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdvG1bzYo8M="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdvG1bzcv7U=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdvG1bzb6Po="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 192,
+											"top": -240,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdvG1bzda1k=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdvG1bzb6Po="
+											},
+											"font": "Arial;13;1",
+											"left": 589,
+											"top": 800,
+											"width": 140.6689453125,
+											"height": 13,
+											"text": "FunctionPointer"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdvG1bzerkc=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdvG1bzb6Po="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 192,
+											"top": -240,
+											"width": 98.47119140625,
+											"height": 13,
+											"text": "(from TypeTraits)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFoWdvG1bzfSRQ=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdvG1bzb6Po="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 192,
+											"top": -240,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 584,
+									"top": 793,
+									"width": 150.6689453125,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFoWdvG1bzcv7U="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFoWdvG1bzda1k="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFoWdvG1bzerkc="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFoWdvG1bzfSRQ="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAFoWdvG1bzgfRs=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdvG1bzagyc="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdvG1bzYo8M="
+									},
+									"font": "Arial;13;0",
+									"left": 584,
+									"top": 818,
+									"width": 150.6689453125,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAFoWdvG1bzh/AE=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdvG1bzagyc="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdvG1bzYo8M="
+									},
+									"font": "Arial;13;0",
+									"left": 584,
+									"top": 828,
+									"width": 150.6689453125,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAFoWdvG1bziqeg=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdvG1bzagyc="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdvG1bzYo8M="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 96,
+									"top": -120,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAFoWdvG1bzjnnM=",
+									"_parent": {
+										"$ref": "AAAAAAFoWdvG1bzagyc="
+									},
+									"model": {
+										"$ref": "AAAAAAFoWdvG1bzYo8M="
+									},
+									"subViews": [
+										{
+											"_type": "UMLTemplateParameterView",
+											"_id": "AAAAAAFoWdxIV70GLVc=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdvG1bzjnnM="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWdxIF70D+AQ="
+											},
+											"font": "Arial;13;0",
+											"left": 701.103515625,
+											"top": 765,
+											"width": 37.5654296875,
+											"height": 13,
+											"text": "Ret",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLTemplateParameterView",
+											"_id": "AAAAAAFoWdx32r0OlCc=",
+											"_parent": {
+												"$ref": "AAAAAAFoWdvG1bzjnnM="
+											},
+											"model": {
+												"$ref": "AAAAAAFoWdx3nr0Lwew="
+											},
+											"font": "Arial;13;0",
+											"left": 701.103515625,
+											"top": 780,
+											"width": 37.5654296875,
+											"height": 13,
+											"text": "...Args",
+											"horizontalAlignment": 0
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 696.103515625,
+									"top": 760,
+									"width": 47.5654296875,
+									"height": 38
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 584,
+							"top": 760,
+							"width": 160.6689453125,
+							"height": 78,
+							"nameCompartment": {
+								"$ref": "AAAAAAFoWdvG1bzb6Po="
+							},
+							"attributeCompartment": {
+								"$ref": "AAAAAAFoWdvG1bzgfRs="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAFoWdvG1bzh/AE="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAFoWdvG1bziqeg="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAFoWdvG1bzjnnM="
+							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWdzLfb0ULLs=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"left": 320,
+							"top": 896,
+							"width": 681,
+							"height": 177,
+							"text": "    template<typename Ret, typename... Args> struct FunctionPointer<Ret (*) (Args...)>\n    {\n        typedef List<Args...> Arguments;\n        typedef Ret ReturnType;\n        typedef Ret (*Function) (Args...);\n        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = false};\n        template <typename SignalArgs, typename R>\n        static void call(Function f, void *, void **arg) {\n            FunctorCall<typename Indexes<ArgumentCount>::Value, SignalArgs, R, Function>::call(f, arg);\n        }\n    };"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFoWd0YAb0cHr0=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFoWdzLfb0ULLs="
+							},
+							"tail": {
+								"$ref": "AAAAAAFoWdvG1bzagyc="
+							},
+							"lineStyle": 1,
+							"points": "662:838;661:895"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWeLqA70flS0=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"left": 352,
+							"top": 32,
+							"width": 233,
+							"height": 38,
+							"text": "in QtCore/qobjectdefs_impl.h"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWeUKwr0oX0I=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"left": 672,
+							"top": 32,
+							"width": 553,
+							"height": 129,
+							"text": "template <typename T> struct RemoveRef { typedef T Type; };\n    template <typename T> struct RemoveRef<T&> { typedef T Type; };\n    template <typename T> struct RemoveConstRef { typedef T Type; };\n    template <typename T> struct RemoveConstRef<const T&> { typedef T Type; };"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWeWJIb0wO0U=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"left": 928,
+							"top": 240,
+							"width": 705,
+							"height": 249,
+							"text": "template <typename...> struct List {}; //类型列表\n    template <typename Head, typename... Tail> struct List<Head, Tail...> { typedef Head Car; typedef List<Tail...> Cdr; };\n    template <typename, typename> struct List_Append;\n    template <typename... L1, typename...L2> struct List_Append<List<L1...>, List<L2...>> { typedef List<L1..., L2...> Value; };\n    template <typename L, int N> struct List_Left {\n        typedef typename List_Append<List<typename L::Car>,typename List_Left<typename L::Cdr, N - 1>::Value>::Value Value;\n    };\n    template <typename L> struct List_Left<L, 0> { typedef List<> Value; };\n\n    // List_Select<L,N> returns (via typedef Value) the Nth element of the list L\n    template <typename L, int N> struct List_Select { typedef typename List_Select<typename L::Cdr, N - 1>::Value Value; };\n    template <typename L> struct List_Select<L,0> { typedef typename L::Car Value; };"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFoWec82r0+Ajk=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdWoOroZoxY="
+							},
+							"font": "Arial;13;0",
+							"left": 936,
+							"top": 176,
+							"width": 465,
+							"height": 51,
+							"text": "模板元编程图灵完备：函数：类或结构体，变量：static const/enum/typedef(value类型和type类型), 分支判断：特化/偏特化/tag dispatcher，循环：递归(递归继承并using，递归typedef)"
+						}
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAFoWdeLZ7wyai8=",
+					"_parent": {
+						"$ref": "AAAAAAFoWdWoOroY+6U="
+					},
+					"name": "FunctionPointer",
+					"ownedElements": [
+						{
+							"_type": "UMLEnumeration",
+							"_id": "AAAAAAFoWdfQOLxl8Lk=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdeLZ7wyai8="
+							},
+							"name": "Enumeration1"
+						}
+					],
+					"templateParameters": [
+						{
+							"_type": "UMLTemplateParameter",
+							"_id": "AAAAAAFoWdefCLxd8xU=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdeLZ7wyai8="
+							},
+							"name": "Func"
+						}
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAFoWdl4/byF93g=",
+					"_parent": {
+						"$ref": "AAAAAAFoWdWoOroY+6U="
+					},
+					"name": "FunctionPointer",
+					"templateParameters": [
+						{
+							"_type": "UMLTemplateParameter",
+							"_id": "AAAAAAFoWdnlyLywcYM=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdl4/byF93g="
+							},
+							"name": "Obj"
+						},
+						{
+							"_type": "UMLTemplateParameter",
+							"_id": "AAAAAAFoWdo0n7y8z80=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdl4/byF93g="
+							},
+							"name": "Ret"
+						},
+						{
+							"_type": "UMLTemplateParameter",
+							"_id": "AAAAAAFoWdqY5rzDhXw=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdl4/byF93g="
+							},
+							"name": "...Args"
+						}
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAFoWdvG1bzYo8M=",
+					"_parent": {
+						"$ref": "AAAAAAFoWdWoOroY+6U="
+					},
+					"name": "FunctionPointer",
+					"templateParameters": [
+						{
+							"_type": "UMLTemplateParameter",
+							"_id": "AAAAAAFoWdxIF70D+AQ=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdvG1bzYo8M="
+							},
+							"name": "Ret"
+						},
+						{
+							"_type": "UMLTemplateParameter",
+							"_id": "AAAAAAFoWdx3nr0Lwew=",
+							"_parent": {
+								"$ref": "AAAAAAFoWdvG1bzYo8M="
+							},
+							"name": "...Args"
+						}
+					]
 				}
 			]
 		}
